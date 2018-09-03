@@ -1,0 +1,52 @@
+<div class="jumbotron jumbotron-fluid tweet-section">
+  <div class="container">
+    <div class="input-group mb-3">
+      <input [(ngModel)]="videoUrl" style="margin-right: 20px;" type="text" class="form-control" placeholder="Enter Video URL"
+        aria-label="Enter Video URL" aria-describedby="basic-addon2">
+      <input [(ngModel)]="comment" type="text" class="form-control" placeholder="Enter Comment" aria-label="Enter Comment" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button (click)="tweet()" class="btn btn-outline-secondary" type="button">Tweet #nowplaying</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loader" class="overlay"><div class="loader"></div></div>
+
+<div class="container">
+  <div *ngIf="alert" class="alert alert-info" style="text-align: center;">
+    <strong>Info!</strong> {{alert}}
+  </div>
+  <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"
+    [scrollWindow]="false">
+
+    <div class="tweet-card" *ngFor="let tweet of tweets">
+      <div class="card">
+        <div class="card-header">
+          {{tweet.user.description ? tweet.user.description : 'No Description'}}
+        </div>
+        <div class="row" style="padding: 15px;">
+          <div class="col-md-4">
+            <div class="card" style="width: 100%;">
+              {{tweet.entities.urls[0] && tweet.entities.urls[0].url}}
+              <!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+              </iframe> -->
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{tweet.user.name}}</h5>
+                <p class="card-text">{{tweet.text}}</p>
+                <div>
+                  <h6>
+                    <span class="badge badge-secondary">{{tweet.created_at | date:'short'}}</span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
