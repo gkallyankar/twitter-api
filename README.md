@@ -4,7 +4,7 @@ Twitter API to post and fetch latest tweets against particular #tag.
 
 ### Nodejs: Server setup
 ```
-1. git clone https://github.com/navjotdhanawat/twitter-api.git
+1. git clone https://github.com/gkallyankar/twitter-api.git
 2. cd twitter-api
 3. npm i
 4. npm start 
