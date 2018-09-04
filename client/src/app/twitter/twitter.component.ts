@@ -89,5 +89,11 @@ export class TwitterComponent implements OnInit {
   getLink(text) {
     return text.match(/\b(https?:\/\/.*?\.[a-z]{2,4}\b)/g);
   }
-
+  vidoeUrl(videoUrl) {
+     if (videoUrl.urls && videoUrl.urls[0] && videoUrl.urls[0].display_url) {
+       return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + videoUrl.urls[0].display_url.replace('youtu.be/',''));
+     }
+     return this.url;
+   }
+  
 }

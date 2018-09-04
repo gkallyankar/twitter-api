@@ -27,11 +27,10 @@
         <div class="row" style="padding: 15px;">
           <div class="col-md-4">
             <div class="card" style="width: 100%;">
-              {{tweet.entities.urls[0] && tweet.entities.urls[0].url}}
-              <!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-              </iframe> -->
-            </div>
-          </div>
+              <!-- {{tweet.entities.urls[0] && tweet.entities.urls[0].url}}   -->
+              <iframe [src]="vidoeUrl(tweet.entities)">
+             </iframe>           
+           </div>
           <div class="col-md-8">
             <div class="card">
               <div class="card-body">
