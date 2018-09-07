@@ -24,14 +24,14 @@
         <div class="card-header">
           {{tweet.user.description ? tweet.user.description : 'No Description'}}
         </div>
-        <div class="row" style="padding: 15px;">
-          <div class="col-md-4">
+        <div class="container">
+        <div class="row">
+          <div class="col">
             <div class="card" style="width: 100%;">
-              <!-- {{tweet.entities.urls[0] && tweet.entities.urls[0].url}}   -->
-              <iframe [src]="vidoeUrl(tweet.entities)">
-             </iframe>           
-           </div>
-          <div class="col-md-8">
+            <iframe [src]="vidoeUrl(tweet.entities)"></iframe>
+            </div> 
+          </div>
+          <div class="col">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">{{tweet.user.name}}</h5>
