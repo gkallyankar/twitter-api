@@ -28,10 +28,6 @@ Twitter API to post and fetch latest tweets against particular #tag.
 3. Post tweet by providing video link and comment.(It will post this tweet with #nowplaying)
 4. Showing video links from tweets(Issue to show youtube video from shorlinks genereted by twitter)
 
-### Todos in progress:
-1. Geo location based tweets.
-2. Video player integration.
-
 ### To Get Experience 
 Add Your 
 1. consumer_key
